@@ -1,33 +1,34 @@
 function moveButton() {
     const noBtn = document.getElementById('noBtn');
     
-    // Mobile screen dimensions
+    // Screen dimensions
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    // Safe boundaries: Isse button screen ke 10% se 80% ke beech hi rahega
-    // Taake corners se bahar na nikal paye
-    const maxX = width - 120;
+    // Isse button screen ke 15% se 85% ke beech hi rahega taake bahar na jaye
+    const maxX = width - 150;
     const maxY = height - 100;
 
-    const randomX = Math.floor(Math.random() * (maxX - 20)) + 20;
-    const randomY = Math.floor(Math.random() * (maxY - 20)) + 20;
+    const randomX = Math.floor(Math.random() * (maxX - 50)) + 50;
+    const randomY = Math.floor(Math.random() * (maxY - 50)) + 50;
 
+    // "absolute" se "fixed" kar rahe hain taake screen par kahin bhi bhage
+    noBtn.style.position = 'fixed';
     noBtn.style.left = randomX + 'px';
     noBtn.style.top = randomY + 'px';
 }
 
 function celebrate() {
+    // Music play
     const music = document.getElementById('bgMusic');
-    music.play();
+    music.play().catch(e => console.log("Music error:", e));
 
-    // Hide everything except the message
+    // Hide entire question section
+    document.getElementById('content-to-hide').style.display = 'none';
     document.querySelector('.image-wrapper').style.display = 'none';
-    document.getElementById('main-question').style.display = 'none';
-    document.getElementById('yesBtn').style.display = 'none';
-    document.getElementById('noBtn').style.display = 'none';
     document.querySelector('.title').style.display = 'none';
     
+    // Show success message
     document.getElementById('success-msg').classList.remove('hidden');
 
     // Blast hearts
@@ -39,7 +40,7 @@ function celebrate() {
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    const hearts = ['❤️', '💖', '💗', '💓'];
+    const hearts = ['❤️', '💖', '💗', '✨'];
     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.fontSize = Math.random() * 20 + 10 + 'px';
@@ -48,4 +49,5 @@ function createHeart() {
     setTimeout(() => heart.remove(), 5000);
 }
 
+// Constant background hearts
 setInterval(createHeart, 300);
