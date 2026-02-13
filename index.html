@@ -17,26 +17,24 @@
     <div id="hearts-container"></div>
 
     <div class="main-card">
-        <div class="content-box">
-            <h1 class="title">Hey Pri ✨</h1>
+        <h1 class="title">Hey Pri ✨</h1>
+        
+        <div class="image-wrapper">
+            <img src="photo.jpg.JPG" id="displayImg">
+        </div>
+
+        <div id="content-to-hide">
+            <h2 id="main-question">Will you be my Valentine forever? 🌹</h2>
             
-            <div class="image-wrapper">
-                <img src="photo.jpg.JPG" id="displayImg">
+            <div class="btn-group">
+                <button id="yesBtn" onclick="celebrate()">YES! ❤️</button>
+                <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No 💔</button>
             </div>
+        </div>
 
-            <div class="question-section">
-                <h2 id="main-question">Will you be my Valentine forever? 🌹</h2>
-                
-                <div class="btn-group">
-                    <button id="yesBtn" onclick="celebrate()">YES! ❤️</button>
-                    <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No 💔</button>
-                </div>
-            </div>
-
-            <div id="success-msg" class="hidden">
-                <h1 class="final-title">I Knew It!</h1>
-                <p class="final-words">I Love You ❤️</p>
-            </div>
+        <div id="success-msg" class="hidden">
+            <h1 class="final-title">I Knew It!</h1>
+            <p class="final-words">I Love You ❤️</p>
         </div>
     </div>
 
