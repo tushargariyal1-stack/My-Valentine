@@ -24,7 +24,6 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.3);
     padding: 30px;
     border-radius: 40px;
-    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     text-align: center;
     max-width: 380px;
     width: 90%;
@@ -32,35 +31,52 @@ body {
 }
 
 .image-wrapper img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid white;
-    margin: 20px 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: 4px solid white;
+    margin: 15px 0;
 }
 
-.title { font-family: 'Dancing Script', cursive; font-size: 40px; color: white; }
+.title { font-family: 'Dancing Script', cursive; font-size: 35px; color: white; }
 
-#main-question { color: #fff; font-size: 24px; margin-bottom: 30px; line-height: 1.2; }
+#main-question { color: #fff; font-size: 22px; margin-bottom: 25px; }
 
-.btn-group { position: relative; height: 80px; display: flex; justify-content: center; align-items: center; }
+.btn-group { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    position: relative; 
+    min-height: 60px;
+}
 
-button { padding: 12px 35px; font-size: 18px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.2s; z-index: 100; }
+button { 
+    padding: 12px 30px; 
+    font-size: 18px; 
+    border-radius: 50px; 
+    border: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+}
 
-#yesBtn { background: #ff4d6d; color: white; box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4); }
+#yesBtn { background: #ff4d6d; color: white; z-index: 1; }
 
-#noBtn { background: #fff; color: #ff4d6d; position: fixed; transition: 0.1s; }
+#noBtn { 
+    background: #fff; 
+    color: #ff4d6d; 
+    position: absolute; 
+    left: 60%; /* Initially placed away from YES */
+    transition: 0.1s ease-out;
+    z-index: 100;
+}
 
 .hidden { display: none; }
 
-.final-title { font-family: 'Dancing Script', cursive; font-size: 45px; color: white; margin-top: 10px; }
+.final-title { font-family: 'Dancing Script', cursive; font-size: 45px; color: white; }
+.final-words { font-size: 25px; color: white; font-weight: 600; }
 
-.final-words { font-size: 25px; color: white; font-weight: 600; margin-top: 10px; }
-
-.heart { position: absolute; color: rgba(255, 255, 255, 0.8); animation: float 5s linear infinite; z-index: 1; }
-
+.heart { position: absolute; color: white; animation: float 5s linear infinite; }
 @keyframes float {
     0% { transform: translateY(100vh); opacity: 1; }
     100% { transform: translateY(-10vh); opacity: 0; }
