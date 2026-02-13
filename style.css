@@ -1,0 +1,67 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b, #ff758c, #ff7eb3);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.main-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    z-index: 10;
+}
+
+.image-wrapper img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin: 20px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.title { font-family: 'Dancing Script', cursive; font-size: 40px; color: white; }
+
+#main-question { color: #fff; font-size: 24px; margin-bottom: 30px; line-height: 1.2; }
+
+.btn-group { position: relative; height: 80px; display: flex; justify-content: center; align-items: center; }
+
+button { padding: 12px 35px; font-size: 18px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.2s; z-index: 100; }
+
+#yesBtn { background: #ff4d6d; color: white; box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4); }
+
+#noBtn { background: #fff; color: #ff4d6d; position: fixed; transition: 0.1s; }
+
+.hidden { display: none; }
+
+.final-title { font-family: 'Dancing Script', cursive; font-size: 45px; color: white; margin-top: 10px; }
+
+.final-words { font-size: 25px; color: white; font-weight: 600; margin-top: 10px; }
+
+.heart { position: absolute; color: rgba(255, 255, 255, 0.8); animation: float 5s linear infinite; z-index: 1; }
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
