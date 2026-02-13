@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Pri ❤️</title>
+    <link rel="icon" type="image/x-icon" href="photo.jpg.JPG">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="hearts-container"></div>
+
+    <div class="main-card">
+        <div class="content-box">
+            <h1 class="title">Hey Pri ✨</h1>
+            
+            <div class="image-wrapper">
+                <img src="photo.jpg.JPG" id="displayImg">
+            </div>
+
+            <div class="question-section">
+                <h2 id="main-question">Will you be my Valentine forever? 🌹</h2>
+                
+                <div class="btn-group">
+                    <button id="yesBtn" onclick="celebrate()">YES! ❤️</button>
+                    <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No 💔</button>
+                </div>
+            </div>
+
+            <div id="success-msg" class="hidden">
+                <h1 class="final-title">I Knew It!</h1>
+                <p class="final-words">I Love You ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
