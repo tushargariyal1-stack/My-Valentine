@@ -1,33 +1,33 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b, #ff758c, #ff7eb3);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background: #ffafbd;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
+    transition: background 1s ease;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Jab YES dabega toh ye class body pe lag jayegi */
+body.celebrate-bg {
+    background: radial-gradient(circle, #ff4d6d, #ff758c, #ffafbd);
 }
 
 .main-card {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     padding: 30px;
     border-radius: 40px;
     text-align: center;
     max-width: 380px;
     width: 90%;
     z-index: 10;
+    transition: transform 0.5s ease;
 }
 
 .image-wrapper img {
@@ -35,49 +35,55 @@ body {
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 5px solid white;
     margin: 15px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.title { font-family: 'Dancing Script', cursive; font-size: 35px; color: white; }
+.title { font-family: 'Dancing Script', cursive; font-size: 38px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
 
-#main-question { color: #fff; font-size: 22px; margin-bottom: 25px; }
+#main-question { color: #fff; font-size: 24px; margin-bottom: 30px; }
 
-.btn-group { 
-    display: flex; 
-    justify-content: center; 
-    gap: 30px; 
-    position: relative; 
-    min-height: 60px;
-}
+.btn-group { position: relative; min-height: 80px; display: flex; justify-content: center; align-items: center; }
 
-button { 
-    padding: 12px 30px; 
-    font-size: 18px; 
-    border-radius: 50px; 
-    border: none; 
-    cursor: pointer; 
-    font-weight: 600; 
-}
+button { padding: 15px 35px; font-size: 18px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-#yesBtn { background: #ff4d6d; color: white; z-index: 1; }
+#yesBtn { background: #ff4d6d; color: white; transition: 0.3s; }
+#yesBtn:hover { transform: scale(1.1); background: #ff1a4a; }
 
-#noBtn { 
-    background: #fff; 
-    color: #ff4d6d; 
-    position: absolute; 
-    left: 60%; /* Initially placed away from YES */
-    transition: 0.1s ease-out;
-    z-index: 100;
-}
+#noBtn { background: #fff; color: #ff4d6d; position: absolute; transition: 0.1s; z-index: 100; }
 
 .hidden { display: none; }
 
-.final-title { font-family: 'Dancing Script', cursive; font-size: 45px; color: white; }
-.final-words { font-size: 25px; color: white; font-weight: 600; }
+/* Victory Text Style */
+.victory-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    color: white;
+    animation: bounce 1s infinite alternate;
+}
 
-.heart { position: absolute; color: white; animation: float 5s linear infinite; }
+.love-text {
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+    margin-top: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); text-shadow: 0 0 20px #fff; }
+    100% { transform: scale(1); }
+}
+
+.heart { position: absolute; color: white; animation: float 5s linear infinite; pointer-events: none; }
 @keyframes float {
-    0% { transform: translateY(100vh); opacity: 1; }
-    100% { transform: translateY(-10vh); opacity: 0; }
+    0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
 }
