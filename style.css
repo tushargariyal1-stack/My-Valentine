@@ -1,89 +1,35 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background: #ffafbd;
-    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-    transition: background 1s ease;
+.btn-group { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 50px; /* Isse shuruat mein dono door rahenge */
+    margin-top: 30px;
+    min-height: 100px;
+    position: relative;
 }
 
-/* Jab YES dabega toh ye class body pe lag jayegi */
-body.celebrate-bg {
-    background: radial-gradient(circle, #ff4d6d, #ff758c, #ffafbd);
-}
-
-.main-card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    padding: 30px;
-    border-radius: 40px;
-    text-align: center;
-    max-width: 380px;
-    width: 90%;
-    z-index: 10;
-    transition: transform 0.5s ease;
-}
-
-.image-wrapper img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid white;
-    margin: 15px 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.title { font-family: 'Dancing Script', cursive; font-size: 38px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-
-#main-question { color: #fff; font-size: 24px; margin-bottom: 30px; }
-
-.btn-group { position: relative; min-height: 80px; display: flex; justify-content: center; align-items: center; }
-
-button { padding: 15px 35px; font-size: 18px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-#yesBtn { background: #ff4d6d; color: white; transition: 0.3s; }
-#yesBtn:hover { transform: scale(1.1); background: #ff1a4a; }
-
-#noBtn { background: #fff; color: #ff4d6d; position: absolute; transition: 0.1s; z-index: 100; }
-
-.hidden { display: none; }
-
-/* Victory Text Style */
-.victory-text {
-    font-family: 'Dancing Script', cursive;
-    font-size: 50px;
-    color: white;
-    animation: bounce 1s infinite alternate;
-}
-
-.love-text {
-    font-size: 30px;
-    color: white;
+#yesBtn { 
+    background: #ff4d6d; 
+    color: white; 
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
     font-weight: 700;
-    margin-top: 10px;
-    animation: pulse 1.5s infinite;
 }
 
-@keyframes bounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); text-shadow: 0 0 20px #fff; }
-    100% { transform: scale(1); }
-}
-
-.heart { position: absolute; color: white; animation: float 5s linear infinite; pointer-events: none; }
-@keyframes float {
-    0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+#noBtn { 
+    background: #fff; 
+    color: #ff4d6d; 
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.1s;
+    /* Shuruat mein ye normal rahega */
+    position: relative; 
+    z-index: 999;
 }
